@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nigeria Map Base -->
+  <path d="M100,100 L500,100 L500,400 L100,400 Z" fill="#E5F5E5"/>
+  
+  <!-- Northern States in Light Green -->
+  <path d="M150,150 L450,150 L450,300 L150,300 Z" fill="#4CAF50" opacity="0.6"/>
+  
+  <!-- Southern States in Orange -->
+  <path d="M200,300 L400,300 L400,350 L200,350 Z" fill="#FF9800" opacity="0.6"/>
+  
+  <!-- 3D Bar Chart Elements -->
+  <g transform="translate(250,200)">
+    <!-- Bar 1 -->
+    <path d="M0,0 L20,0 L20,-80 L0,-80 Z" fill="#808080"/>
+    <!-- Bar 2 -->
+    <path d="M30,0 L50,0 L50,-120 L30,-120 Z" fill="#A0A0A0"/>
+    <!-- Bar 3 -->
+    <path d="M60,0 L80,0 L80,-100 L60,-100 Z" fill="#4CAF50"/>
+  </g>
+  
+  <!-- State Borders -->
+  <path d="M150,150 L450,150 L450,350 L150,350 Z" 
+        stroke="#113C14" 
+        stroke-width="1" 
+        fill="none" 
+        stroke-dasharray="2,2"/>
+</svg> 
