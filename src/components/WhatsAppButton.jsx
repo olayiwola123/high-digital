@@ -15,16 +15,17 @@ const WhatsAppButton = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.8 }}
-            className="absolute bottom-16 left-0 bg-white rounded-lg shadow-xl p-4 w-64"
+            initial={{ opacity: 0, y: 20, scale: 0.8, x: 20 }}
+            animate={{ opacity: 1, y: 0, scale: 1, x: 0 }}
+            exit={{ opacity: 0, y: 20, scale: 0.8, x: 20 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl p-4 w-72"
           >
             <div className="flex justify-between items-center mb-2">
               <h3 className="text-gray-800 font-semibold">Chat with us!</h3>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-gray-500 hover:text-gray-700 transition-colors"
               >
                 <X size={20} />
               </button>
@@ -32,12 +33,15 @@ const WhatsAppButton = () => {
             <p className="text-gray-600 text-sm mb-4">
               Have questions? We're here to help! Click below to chat with us on WhatsApp.
             </p>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={handleWhatsAppClick}
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-center gap-2"
             >
+              <FaWhatsapp size={20} />
               Open WhatsApp
-            </button>
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -46,7 +50,7 @@ const WhatsAppButton = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg"
+        className="relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-colors"
       >
         <FaWhatsapp size={24} />
         
